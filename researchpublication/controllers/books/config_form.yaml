@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Book
+
+# Model Form Field configuration
+form: $/digitalfox/researchpublication/models/book/fields.yaml
+
+# Model Class name
+modelClass: Digitalfox\Researchpublication\Models\Book
+
+# Default redirect location
+defaultRedirect: digitalfox/researchpublication/books
+
+# Create page
+create:
+    title: Create Book
+    redirect: digitalfox/researchpublication/books/update/:id
+    redirectClose: digitalfox/researchpublication/books
+
+# Update page
+update:
+    title: Edit Book
+    redirect: digitalfox/researchpublication/books
+    redirectClose: digitalfox/researchpublication/books
+
+# Preview page
+preview:
+    title: Preview Book

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Research Brief
+
+# Model Form Field configuration
+form: $/digitalfox/researchpublication/models/researchbrief/fields.yaml
+
+# Model Class name
+modelClass: Digitalfox\Researchpublication\Models\ResearchBrief
+
+# Default redirect location
+defaultRedirect: digitalfox/researchpublication/researchbriefs
+
+# Create page
+create:
+    title: Create Research Brief
+    redirect: digitalfox/researchpublication/researchbriefs/update/:id
+    redirectClose: digitalfox/researchpublication/researchbriefs
+
+# Update page
+update:
+    title: Edit Research Brief
+    redirect: digitalfox/researchpublication/researchbriefs
+    redirectClose: digitalfox/researchpublication/researchbriefs
+
+# Preview page
+preview:
+    title: Preview Research Brief

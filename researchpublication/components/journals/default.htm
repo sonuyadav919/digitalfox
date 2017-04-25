@@ -1,0 +1,37 @@
+{% put styles %}
+    <link href="/plugins/digitalfox/researchpublication/assets/css/style.css" rel="stylesheet" />
+{% endput %}
+
+{% set Journals = __SELF__.journals %}
+
+<!-- bloc-0 -->
+<div class="col-md-12 journal-section">
+		<div class="row voffset">
+      {% if Journals.count %}
+          {% for Journal in Journals %}
+        			<div class="col-sm-4">
+                  <div class="bordered">
+
+                      {% if Journal.file_mime %}
+            			    <a href="//docs.google.com/gview?url={{url(Journal.file | media)}}&embedded=true" class="Journals">
+                        <p  align="center">
+                          <img src="/plugins/digitalfox/researchpublication/assets/icons/{{Journal.file_mime}}.png" alt="{{Journal.file_mime}}" class="img-responsive" style="max-height:100px;" />
+                        </p>
+                      </a>
+                      {% endif %}
+
+                			<p class="journal">
+                				  {{Journal.title}}
+                			</p>
+
+                				{{ html_limit(Journal.description,10000) }}
+                  			</div>
+              </div>
+          {% endfor %}
+      {% else %}
+        <h1 align="center">No Journals found!</h1>
+      {% endif %}
+		</div>
+  </div>
+
+<!-- bloc-0 END -->

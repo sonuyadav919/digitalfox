@@ -1,0 +1,19 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Title
+        # span: auto
+
+    description:
+        label: Description
+        type: Backend\FormWidgets\RichEditor
+        # span: auto
+
+    file:
+        label: Attach File
+        type: mediafinder
+        mode: file
+        # span: auto

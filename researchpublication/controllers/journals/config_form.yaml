@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Journal
+
+# Model Form Field configuration
+form: $/digitalfox/researchpublication/models/journal/fields.yaml
+
+# Model Class name
+modelClass: Digitalfox\Researchpublication\Models\Journal
+
+# Default redirect location
+defaultRedirect: digitalfox/researchpublication/journals
+
+# Create page
+create:
+    title: Create Journal
+    redirect: digitalfox/researchpublication/journals/update/:id
+    redirectClose: digitalfox/researchpublication/journals
+
+# Update page
+update:
+    title: Edit Journal
+    redirect: digitalfox/researchpublication/journals
+    redirectClose: digitalfox/researchpublication/journals
+
+# Preview page
+preview:
+    title: Preview Journal

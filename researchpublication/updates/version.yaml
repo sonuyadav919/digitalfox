@@ -1,0 +1,5 @@
+1.0.1:
+      - First version of researchpublication
+      - create_journals_table.php
+      - create_books_table.php
+      - create_research_briefs_table.php

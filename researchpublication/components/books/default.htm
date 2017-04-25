@@ -1,0 +1,38 @@
+{% put styles %}
+    <link href="/plugins/digitalfox/researchpublication/assets/css/style.css" rel="stylesheet" />
+{% endput %}
+
+{% set Books = __SELF__.books %}
+
+<!-- bloc-0 -->
+  <div class="col-md-12 journal-section">
+		<div class="row voffset">
+      {% if Books.count %}
+          {% for Book in Books %}
+        			<div class="col-sm-4">
+                  <div class="bordered">
+
+                    {% if Book.file_mime %}
+                    <a href="//docs.google.com/gview?url={{url(Book.file | media)}}&embedded=true" class="Books">
+                      <p  align="center">
+                        <img src="/plugins/digitalfox/researchpublication/assets/icons/{{Book.file_mime}}.png" alt="{{Journal.file_mime}}" class="img-responsive" style="max-height:100px;" />
+                      </p>
+                    </a>
+                    {% endif %}
+
+                      <p class="journal">
+                				  {{Book.title}}
+                			</p>
+
+                				{{html_limit(Book.description,10000)}}
+
+            			</div>
+              </div>
+          {% endfor %}
+      {% else %}
+        <h1 align="center">No books found!</h1>
+      {% endif %}
+		</div>
+  </div>
+
+<!-- bloc-0 END -->

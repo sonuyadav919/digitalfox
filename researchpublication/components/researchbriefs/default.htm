@@ -1,0 +1,38 @@
+{% put styles %}
+    <link href="/plugins/digitalfox/researchpublication/assets/css/style.css" rel="stylesheet" />
+{% endput %}
+
+{% set ResearchBriefs = __SELF__.researchbriefs %}
+
+<!-- bloc-0 -->
+  <div class="col-md-12 journal-section">
+		<div class="row voffset">
+      {% if ResearchBriefs.count %}
+          {% for ResearchBrief in ResearchBriefs %}
+        			<div class="col-sm-4">
+                  <div class="bordered">
+
+                      {% if ResearchBrief.file_mime %}
+            			    <a href="//docs.google.com/gview?url={{url(ResearchBrief.file | media)}}&embedded=true" class="ResearchBriefs">
+                        <p  align="center">
+                          <img src="/plugins/digitalfox/researchpublication/assets/icons/{{ResearchBrief.file_mime}}.png" alt="{{Journal.file_mime}}" class="img-responsive" style="max-height:100px;" />
+                        </p>
+                      </a>
+                      {% endif %}
+
+                      <p class="journal">
+                				  {{ResearchBrief.title}}
+                			</p>
+
+                				{{html_limit(ResearchBrief.description,10000)}}
+
+              			</div>
+              </div>
+          {% endfor %}
+      {% else %}
+        <h1 align="center">No research briefs and reports found!</h1>
+      {% endif %}
+		</div>
+  </div>
+
+<!-- bloc-0 END -->
